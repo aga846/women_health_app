@@ -1,0 +1,24 @@
+{% extends "cycles/base.html" %}
+
+{% block title %}
+  Women Health
+{% endblock %}
+
+{% block body %}
+  <h1>Add a new cycle</h1>
+  <h2>Please enter information about the length of the cycle and its first day</h2>
+    <form class="" action="{% url 'cycles:add_new_cycle' %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="goal">
+        <h2>Add this cycle</h2>
+        <input type="submit" value="Add the cycle">
+      </div>
+    </form>
+  
+  <h1 class="h1_about">See all your cycles:</h1>
+  <div>
+    <a href="{% url 'cycles:cycles_list' user=user %}">All your cycles</a>
+  </div>
+  
+{% endblock %}

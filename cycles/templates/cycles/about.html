@@ -1,0 +1,42 @@
+{% extends "cycles/base.html" %}
+
+{% block title %}
+  About last cycle
+{% endblock %}
+
+{% block body %}
+{% if is_last_cycle %}
+  <h1 class="h1_about">About your last cycle:</h1>
+{% else %}
+  <h1 class="h1_about">About your cycle {{ first_day }} - {{ last_day }}</h1>
+{% endif %}
+<h2 class="h2_about">If you want to have a baby:</h2>
+<h2>Probable ovulation day: {{ ovulation_day }}</h2> 
+<h2>Probable fertile days:
+  from {{ first_fertile }} to {{ day_after }}
+
+<h2 class="h2_about">If you want to avoid pregnacy:</h2>
+<h2>Relatively safe days:
+  from {{ first_day }} to {{ last_day_before }}
+</h2>
+<h2>Absolutely safe days:
+  from {{ first_day_after }} to {{ last_day }}
+</h2>
+
+<h1 class="h1_about">See the temperatures in this cycle:</h1>
+<div>
+  <a href="{% url 'cycles:temperatures' pk=pk %}">Temperatures</a>
+</div>
+  
+
+<h1 class="h1_about">See all your cycles:</h1>
+<div class="">
+  <a href="{% url 'cycles:cycles_list' user=user %}">All your cycles</a>
+</div>
+
+<h1 class="h1_about">Do you want to add a new cycle?</h1>
+  <div class="">
+    <a href="{% url 'cycles:add_new_cycle' %}"><input type="submit" name="" value="Yes"></a>
+  </div>
+
+{% endblock %}

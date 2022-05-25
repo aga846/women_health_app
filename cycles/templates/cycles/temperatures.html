@@ -1,0 +1,41 @@
+{% extends "cycles/base.html" %}
+
+{% block title %}
+  Temperatures
+{% endblock %}
+
+{% block body %}
+{% if is_last_cycle %}
+  <h1>Temperatures in your last cycle:</h1>
+{% else %}
+  <h1>Temperatures in the cycle {{ first_day }} - {{ last_day }}</h1>
+{% endif %}
+<h2 class="h2_highlighted">(highlighted calculated ovulation day)</h2>
+
+<table>
+  <thead>
+    <th>Day of cycle</th>
+    <th>Temperature</th>
+  </thead>
+
+{% for temperature, color in temperatures_colors %}
+  <tr class={{color}}>
+    <td>{{ temperature.day_of_cycle }}</td>
+    <td>{{ temperature.temperature }}</td>
+  </tr>
+
+{% endfor %}
+</table>
+
+
+<h2>Add a temperature:</h2>
+<div>
+  <a href="{% url 'cycles:add_temperature' pk=pk %}">Add a temperature</a>
+</div>
+
+<h2>Go to the list of your cycles:</h2>
+<div>
+  <a href="{% url 'cycles:cycles_list' user=user %}">List of cycles</a>
+</div>
+  
+{% endblock %}

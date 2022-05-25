@@ -1,0 +1,16 @@
+{% extends "cycles/base.html" %}
+
+{% block title %}
+  Add a temperature
+{% endblock %}
+
+{% block body %}
+<h1>Add a temperature</h1>
+<h2>Enter the day of the cycle and the temperature:</h2>
+<form class="" action="{% url 'cycles:add_temperature' pk=pk %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" name="" value="Add">
+</form>
+
+{% endblock %}

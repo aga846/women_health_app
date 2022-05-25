@@ -1,0 +1,85 @@
+body, .day {
+  background-color: #ffcdb2;
+}
+
+h1 {
+  color: #b5838d;
+  text-align: center;
+}
+
+h2 {
+  color: #e5989b;
+  text-align: center;
+  margin-top: 50px
+}
+
+form {
+  text-align: center;
+  margin-top: 10px;
+}
+
+a {
+  margin-top: 20px;
+}
+
+p {
+  text-align: center;
+  color: blue;
+}
+
+div {
+  text-align: center;
+  color: blue;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px
+}
+
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+.goal {
+  text-align: center;
+  margin-top: 20px
+}
+
+.days {
+  text-align: center;
+  margin-top: 20px
+}
+
+.h1_about {
+  color: #6d6875;
+  margin-top: 100px;
+}
+
+.h2_about {
+  color: #b5838d;
+}
+
+.h2_highlighted {
+  color: #b5838d;
+  margin-top: 2px
+}
+
+#welcome {
+  margin-top: 90px
+}
+
+#hello {
+  align-items: right;
+  color: pink;
+}
+
+#h2_index, #h2_login {
+  margin-top: 10px
+}
+
+.ovulation_day {
+  background-color: #b5838d;
+}

@@ -1,0 +1,13 @@
+{% extends "cycles/base.html" %}
+
+{% block title %}
+  I want to have a baby!
+{% endblock %}
+
+{% block body %}
+<h1>Welcome to the baby page!</h1>
+<h2>Probable ovulation day: {{ ovulation_day|date:"Y-m-d" }}</h2> 
+<h2>Probable fertile days:
+  from {{ first_fertile|date:"Y-m-d" }} to {{ day_after|date:"Y-m-d" }}
+</h2>
+{% endblock %}

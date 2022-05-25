@@ -1,0 +1,39 @@
+{% extends "cycles/base.html" %}
+
+{% block title %}
+  Women Health
+{% endblock %}
+
+{% block body %}  
+
+{% if user.is_authenticated %}
+  <h1>See information about your last cycle:</h1>
+    <div>
+      <a href="{% url 'cycles:about' pk=pk %}">See information</a>
+    </div>
+
+{% else %}
+  <h1 id="welcome">Welcome to the Women Health Page!</h1>
+  <h1>Quick info about your fertile and infertile days</h1>
+  <h2 id="h2_index">Please enter information about the average length of your cycles and the first day of your last cycle</h2>
+  <form class="" action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="goal">
+      <h2>What is your goal?</h2>
+        <input type="submit" name="action" value="I want to have a baby">
+        <input type="submit" name="action" value="I want to avoid pregnacy">
+    </div>
+  </form>
+    <h2>Want to have access to information about all your cycles and the expected date of your next period?</h2>
+      <div>
+        <a href="{% url 'register' %}"><input type="submit" name="" value="Register"></a>
+      </div>
+    <h2>Already have an account?</h2>
+    <h2 id="h2_login">Log in!</h2>
+      <div class="">
+        <a href="{% url 'user_login' %}"><input type="submit" name="" value="Log In"></a>
+      </div>
+{% endif %}
+
+{% endblock %}

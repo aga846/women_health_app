@@ -1,0 +1,13 @@
+{% extends "cycles/base.html" %}
+
+{% block title %}
+  Delete a cycle
+{% endblock %}
+
+{% block body %}
+  <h1>Are you sure you want to delete the cycle: {{ first_day }} - {{ last_day }}?</h1>
+  <div>
+    <a href="{% url 'cycles:delete_cycle' pk=pk %}"><button type="button" class="btn btn-danger btn-sm">Delete this cycle</button></a>
+    <a href="{% url 'cycles:cycles_list' user=user %}"><button type="button" class="btn btn-success btn-sm">Don't delete</button></a>
+  </div>
+{% endblock %}
