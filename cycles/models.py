@@ -17,8 +17,9 @@ class CyclesLength(models.Model):
 
 
 class Temperature(models.Model):
-    cycle = models.ForeignKey(CyclesLength, on_delete=models.CASCADE)
+    cycle = models.ForeignKey(
+        CyclesLength, on_delete=models.CASCADE, related_name="temperatures")
     day_of_cycle = models.PositiveIntegerField(
         validators=[MinValueValidator(1)])
     temperature = models.FloatField(
-        validators=[MinValueValidator(35.0), MaxValueValidator(41.0)])
+        validators=[MinValueValidator(34.0), MaxValueValidator(41.0)])
